@@ -952,6 +952,7 @@ class _TypeAheadFieldState<T> extends State<TypeAheadField<T>>
         enableInteractiveSelection:
             widget.textFieldConfiguration.enableInteractiveSelection,
         readOnly: widget.hideKeyboard,
+        autofillHints: widget.textFieldConfiguration.autofillHints
       ),
     );
   }
@@ -1519,6 +1520,8 @@ class TextFieldConfiguration {
 
   final bool enableInteractiveSelection;
 
+  final List<String>? autofillHints;
+
   /// Creates a TextFieldConfiguration
   const TextFieldConfiguration({
     this.decoration: const InputDecoration(),
@@ -1551,6 +1554,7 @@ class TextFieldConfiguration {
     this.textDirection,
     this.scrollPadding: const EdgeInsets.all(20.0),
     this.enableInteractiveSelection: true,
+    this.autofillHints
   });
 
   /// Copies the [TextFieldConfiguration] and only changes the specified
